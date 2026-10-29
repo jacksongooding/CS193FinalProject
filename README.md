@@ -11,8 +11,6 @@ I am inconsistent with updating calendars with assignments and my todo list docu
 A paragraph or a few bullets explaining what the software does at a
 high level. If you have a diagram, embed it here:
 
-![System diagram](docs/diagram.png)
-
 ## Tech Stack
 
 - **Language:** Python
