@@ -8,14 +8,16 @@ I am inconsistent with updating calendars with assignments and my todo list docu
 
 ## How It Works
 
-A paragraph or a few bullets explaining what the software does at a
-high level. If you have a diagram, embed it here:
+This project is a small applicaton which compiles a taskes specified in a .json file and displays them as elements which 
+can be removed when done. A small terminal program is used to add elements to a json file which the graphical program uses
+to build a list of tasks to do. This program leverages Pygame's Rects and fonts to create a UI.
+
 
 ## Tech Stack
 
-- **Language:** Python
-- **Libraries:** PyQt, Kirigami
-- **External tools:** QML
+- **Language:** Python, Bash
+- **Libraries:** Pygame, python json library
+- **External tools:** N/a
 
 ## Setup
 
@@ -33,8 +35,8 @@ To remove an element just press the "x"
 
 ## Roadmap
 
+- [ ] Add terminal based adding
 - [ ] Add a graphical Display of tasks I have to do
-- [ ] Add the ability to remove tasks via an “X” button
 - [ ] Add dynamic color changer for task importance/overdue tasks
 - [ ] Add Terminal Based task adding of tasks
 
