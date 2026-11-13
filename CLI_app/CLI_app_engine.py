@@ -1,4 +1,3 @@
-from json import loads as read
 from json import dumps as write
 from sys import argv as args
 import datetime
