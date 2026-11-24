@@ -36,7 +36,7 @@ To remove an element just press the "x"
 ## Roadmap
 
 - [x] Add Terminal Based task adding of tasks
-- [ ] Add a graphical Display of tasks I have to do
+- [x] Add a graphical Display of tasks I have to do
 - [ ] Add graphical controls/make interface more dynamic
 - [ ] Add dynamic color changer for task importance/overdue tasks
 
