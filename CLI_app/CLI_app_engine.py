@@ -27,29 +27,35 @@ except FileNotFoundError: argDicts = []
 if len(args) < 2: raise ValueError("Must provide at least two arguments: name and then due date")
 # maybe add color later?
 
-localVar = ""
+global newItemDate
 
 try:
-    localVar = args[2].replace("-", "/")
-    localVar = localVar.split("/")
-    args[2] = datetime.datetime(int(localVar[2]), int(localVar[0]), int(localVar[1]))
+    newItemDate = args[2].replace("-", "/")
+    newItemDate = newItemDate.split("/")
+    args[2] = datetime.datetime(int(newItemDate[2]), int(newItemDate[0]), int(newItemDate[1]))
 except: 
     print("Date format is incorrect, it should be mm/dd/yyyy or mm-dd-yyyy")
     exit()
 
+# converts the date into a big number to compare and insert in order
+# that way I can check a single int and not year then month then day over many if loops
 didAddItem = False
+newItemDateNumber = int(newItemDate[2]) * 10000 + int(newItemDate[0]) * 100 + int(newItemDate[1])
+
 for i in range(len(argDicts)):
     date = argDicts[i]["date"].replace(" 00:00:00", "").replace('-', '/').split('/')
+    currItemDateNumber = int(date[0]) * 10000 + int(date[1]) * 100 + int(date[2])
 
-    # fix this logic later
-    if int(localVar[0]) <= int(date[0]) and int(localVar[1]) <= int(date[1]) and int(localVar[2]) <= int(date[2]):
+    if newItemDateNumber < currItemDateNumber:
         argDicts.insert(i, {"name": args[1], "date": str(args[2])})
         didAddItem = True
         break
+
 if not didAddItem: argDicts.append({"name": args[1], "date": str(args[2])})
 
 # file write section #
 global openedFile
+
 try: openedFile = open(jsonFullFileName, 'x')
 except FileExistsError: openedFile = open(jsonFullFileName, 'w')
 

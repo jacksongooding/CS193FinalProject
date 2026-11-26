@@ -12,6 +12,8 @@ This project is a small applicaton which compiles a taskes specified in a .json 
 can be removed when done. A small terminal program is used to add elements to a json file which the graphical program uses
 to build a list of tasks to do. This program leverages Pygame's Rects and fonts to create a UI.
 
+Note: This program is designed to work only with the Linux file structure. It will not run on windows.
+
 
 ## Tech Stack
 
@@ -37,8 +39,8 @@ To remove an element just press the "x"
 
 - [x] Add Terminal Based task adding of tasks
 - [x] Add a graphical Display of tasks I have to do
-- [ ] Add graphical controls/make interface more dynamic
-- [ ] Add dynamic color changer for task importance/overdue tasks
+- [x] Add graphical controls and make the interface more dynamic
+- [ ] Add dynamic color changer for task importance/overdue tasks + instant update after CLI addition
 
 ## Author
 
