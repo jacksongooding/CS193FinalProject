@@ -25,7 +25,6 @@ except FileNotFoundError: argDicts = []
 
 # args section #
 if len(args) < 2: raise ValueError("Must provide at least two arguments: name and then due date")
-# maybe add color later?
 
 global newItemDate
 
@@ -41,6 +40,7 @@ except:
 # that way I can check a single int and not year then month then day over many if loops
 didAddItem = False
 newItemDateNumber = int(newItemDate[2]) * 10000 + int(newItemDate[0]) * 100 + int(newItemDate[1])
+args[1] = args[1].replace('-', ' ')
 
 for i in range(len(argDicts)):
     date = argDicts[i]["date"].replace(" 00:00:00", "").replace('-', '/').split('/')
