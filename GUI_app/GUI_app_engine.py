@@ -53,9 +53,13 @@ def loadData():
     jsonPath = path.dirname(path.abspath(__file__)) + "/../../.config/kdetodolist"
     jsonFullFileName = jsonPath + "/data.json" 
 
+    data = []
+
     if (path.exists(jsonPath)):
-        with open(jsonFullFileName) as f: data = loads(f.read())
-    else: data = []
+        try:
+            with open(jsonFullFileName) as f: data = loads(f.read())
+        except FileNotFoundError: 
+            with open(jsonFullFileName, 'x') as f: f.write(dumps([]))
     
     items = []
     textItems = []
