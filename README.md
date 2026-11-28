@@ -39,6 +39,27 @@ cd CS193FinalProject
 
 This will auto install, add items, and run the program
 
+For KDE Plasma users there is an autostart script that you can install using the commands below.
+(this is a seperate file to give users the choice if they want it without pushing them to do it)
+
+```bash
+git clone https://github.com/jacksongooding/CS193FinalProject
+cd CS193FinalProject
+./install_autostart.sh
+```
+You will have to manually make the script start, however.
+To do this go to settings > System > Autostart, click on Add New then Login Script... Then type .config/autostart/todolist and hit enter
+
+## Uninstall
+To uninstall this program simply run the commands below:
+
+```bash
+cd CS193FinalProject
+./uninstall.sh
+```
+If you deleted the cloned repo, no worries, simply clone the repo again and run the commands above.
+uninstall.sh also removes the autostart files as well.
+
 ## Usage
 To add elements to the list run addtodo \[name\], \[mm/dd/yyyy\]
 Note: to put spaces in the name use a "-" seperator
@@ -47,12 +68,18 @@ To remove an element just press the "x"
 To scroll over elements click the "v" or "^" buttons (clicking scrolls 5 elements at a time)
 
 
-## Roadmap
+## Roadmap for MVP
 
 - [x] Add Terminal Based task adding of tasks
 - [x] Add a graphical Display of tasks I have to do
 - [x] Add graphical controls and make the interface more dynamic
 - [x] Add dynamic color changer for task importance/overdue tasks + instant update after CLI addition
+
+## Additional Features (Important, Not Urgent)
+
+- [x] Make the program autostart on login
+- [ ] Add Sprites to make the program more visually asthetic
+- [ ] Add GUI based task adding
 
 ## Author
 
